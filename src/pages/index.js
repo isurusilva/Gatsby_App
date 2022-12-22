@@ -1,11 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
-
 import sketch from "../images/logo-sketch.png"
 import figma from "../images/logo-figma.png"
 import studio from "../images/logo-studio.png"
@@ -13,9 +9,34 @@ import framer from "../images/logo-framer.png"
 import react from "../images/logo-react.png"
 import swift from "../images/logo-swift.png"
 import wallpaper from "../images/wallpaper.jpg"
+import wallpaper2 from "../images/wallpaper2.jpg"
 import Card from "../components/Card"
+import Section from "../components/Section"
+import Wave from "../components/Wave"
+import staticdata from "../../staticdata.json"
+import Cell from "../components/Cell"
+import styled from "styled-components"
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+const SecttionCaption = styled.p`
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppsercase;
+  color: #94a4ba;
+  text-align: center;
+`
+
+const SectionCellGroup = styled.div`
+  max-width: 800px;
+  margin: 0 auto 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grd-column-gap: 20px;
+  padding: 0 20px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
 
 const IndexPage = () => (
   <Layout>
@@ -28,35 +49,17 @@ const IndexPage = () => (
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi,
           aspernatur! Sed saepe modi minus
         </p>
+
         <Link to="/page-2">Watch the Video</Link>
         <div className="Logos">
-          <img src={sketch} width="50" />
-          <img src={figma} width="50" />
-          <img src={studio} width="50" />
-          <img src={framer} width="50" />
-          <img src={react} width="50" />
-          <img src={swift} width="50" />
+          <img src={sketch} width="50" alt="sketch_logo" />
+          <img src={figma} width="50" alt="figma_logo" />
+          <img src={studio} width="50" alt="studio_logo" />
+          <img src={framer} width="50" alt="framer_logo" />
+          <img src={react} width="50" alt="react_logo" />
+          <img src={swift} width="50" alt="swift_logo" />
         </div>
-        <svg
-          width="100%"
-          height="172"
-          viewBox="0 0 100% 172"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path fill="white">
-            <animate
-              repeatCount="indefinite"
-              fill="freeze"
-              attributeName="d"
-              dur="15s"
-              values="M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z;
-              M0 87.1596C316 87.1597 444 160 884 52.0001C1324 -55.9999 1320.29 34.966 1538 71.251C1814 117.251 2156 189.252 2560 87.1597V233.161L0 233.161V87.1596Z;
-              M0 53.6584C158 11.0001 213 0 363 0C513 0 855.555 115.001 1154 115.001C1440 115.001 1626 -38.0004 2560 53.6585V199.66L0 199.66V53.6584Z;
-              M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z"
-            />
-          </path>
-        </svg>
+        <Wave />
       </div>
     </div>
     <div className="Cards">
@@ -76,6 +79,19 @@ const IndexPage = () => (
         />
       </div>
     </div>
+    <Section
+      image={wallpaper2}
+      logo={react}
+      title="React for Designers"
+      text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum pariatur ad expedita dolor nostrum, eaque rerum accusantium et. Natus odit deleniti sapiente ullam. Exercitationem labore nulla, eveniet soluta expedita doloremque!"
+    />
+
+    <SecttionCaption>12 sections - 6 hours</SecttionCaption>
+    <SectionCellGroup>
+      {staticdata.cells.map(cell => (
+        <Cell title={cell.title} image={cell.image} />
+      ))}
+    </SectionCellGroup>
   </Layout>
 )
 export const Head = () => <Seo title="Home" />
