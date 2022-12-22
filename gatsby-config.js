@@ -10,11 +10,20 @@
 module.exports = {
   siteMetadata: {
     title: `My Gatsby App`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum pariatur ad expedita dolor nostrum, eaque rerum accusantium et. Natus odit deleniti sapiente ullam. Exercitationem labore nulla, eveniet soluta expedita doloremque!`,
+    keywords: `react course, react for designers, ios development, sketch app, swift app course, arkit 2, after effects, create sketch plugin`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `shn9dgvq866t`,
+        accessToken: `tBnch2IFHBUaZ7DBZB9U8kZPnxrIMxZ3r9V4mowZg1Y`,
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

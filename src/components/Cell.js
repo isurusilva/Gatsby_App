@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import logo from "../images/logo-react.png"
 
 const CellGroup = styled.div`
   display: grid;
@@ -16,7 +15,7 @@ const CellImage = styled.div`
   margin: 15px 0 0 0;
   background: #212c4f;
   border-radius: 10px;
-  background-image: url(${logo});
+  background-image: url(${props => props.image});
   ${"" /* background-image: {logo}; */}
   background-size: 60px;
 `
@@ -29,7 +28,7 @@ const CellTitle = styled.div`
 
 const Cell = props => (
   <CellGroup>
-    <CellImage image={logo}></CellImage>
+    <CellImage image={props.image}></CellImage>
     <CellTitle>{props.title}</CellTitle>
   </CellGroup>
 )

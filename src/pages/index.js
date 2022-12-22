@@ -58,6 +58,12 @@ const IndexPage = () => (
           <img src={framer} width="50" alt="framer_logo" />
           <img src={react} width="50" alt="react_logo" />
           <img src={swift} width="50" alt="swift_logo" />
+          {/* <img src={require("../images/logo-sketch.png")} width="50" />
+          <img src={require("../images/logo-figma.png")} width="50" />
+          <img src={require("../images/logo-studio.png")} width="50" />
+          <img src={require("../images/logo-framer.png")} width="50" />
+          <img src={require("../images/logo-react.png")} width="50" />
+          <img src={require("../images/logo-swift.png")} width="50" /> */}
         </div>
         <Wave />
       </div>
