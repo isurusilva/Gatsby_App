@@ -49,7 +49,6 @@ const IndexPage = () => (
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi,
           aspernatur! Sed saepe modi minus
         </p>
-
         <Link to="/page-2">Watch the Video</Link>
         <div className="Logos">
           <img src={sketch} width="50" alt="sketch_logo" />

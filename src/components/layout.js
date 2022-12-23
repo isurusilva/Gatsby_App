@@ -39,7 +39,6 @@ const Layout = ({ children }) => {
       />
       <Header />
       <main>{children}</main>
-
       <Footer data={data}>
         Background made in Cinema 4D, ios app in Swift, site in React.
         <a href="mailto:support@designcode.io">Email us</a>to ask any thing ©
